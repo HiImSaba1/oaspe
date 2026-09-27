@@ -1,0 +1,2 @@
+import { redirect } from "next/navigation"; import { isAdminAuthenticated } from "@/lib/admin-auth"; import { listMediaLibrary } from "@/lib/admin-content"; import { ProjectForm } from "../project-form";
+export default async function NewProject(){if(!(await isAdminAuthenticated()))redirect('/admin');return <main className="admin-main"><div className="admin-page-head"><div><p className="admin-kicker">ΝΕΟ ΕΡΓΟ</p><h1>Δημιουργία.</h1></div></div><ProjectForm images={await listMediaLibrary()}/></main>}

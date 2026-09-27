@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-09-23T11:11:22.561Z",
+  "policy": "current-site-images",
+  "hierarchy": "wp-content/uploads/YYYY/MM",
+  "total": 31,
+  "downloaded": 1,
+  "skipped": 30,
+  "failed": 0,
+  "items": [
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/02/Acadimies_big-7.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/02/Acadimies_big-7.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/02/Acadimies_big-7.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/02/cropped-Acadimies_big-7.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/02/cropped-Acadimies_big-7.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/02/cropped-Acadimies_big-7.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/02/goneis_paidia_17.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/02/goneis_paidia_17.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/02/goneis_paidia_17.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/02/oaspe_2.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/02/oaspe_2.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/02/oaspe_2.jpg",
+      "status": "downloaded"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/02/oaspe_kid.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/02/oaspe_kid.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/02/oaspe_kid.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/02/skopos_17.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/02/skopos_17.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/02/skopos_17.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/03/Acadimies_big-1.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/03/Acadimies_big-1.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/03/Acadimies_big-1.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/03/Acadimies_big-e1456956549863.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/03/Acadimies_big-e1456956549863.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/03/Acadimies_big-e1456956549863.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/05/OASPE_background.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/05/OASPE_background.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/05/OASPE_background.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2016/05/soccer_kids.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2016/05/soccer_kids.jpg",
+      "publicUrl": "/images/wp-content/uploads/2016/05/soccer_kids.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2018/09/oaspe_vravefsi_epsm.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2018/09/oaspe_vravefsi_epsm.jpg",
+      "publicUrl": "/images/wp-content/uploads/2018/09/oaspe_vravefsi_epsm.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2018/11/DSC_2751.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2018/11/DSC_2751.jpg",
+      "publicUrl": "/images/wp-content/uploads/2018/11/DSC_2751.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/01/12o_PASXA_AFISA_2019_NEW.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2019/01/12o_PASXA_AFISA_2019_NEW.jpg",
+      "publicUrl": "/images/wp-content/uploads/2019/01/12o_PASXA_AFISA_2019_NEW.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/02/fb_1080x1080_halfmarathon-sportshow2019-1024x1024.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2019/02/fb_1080x1080_halfmarathon-sportshow2019-1024x1024.jpg",
+      "publicUrl": "/images/wp-content/uploads/2019/02/fb_1080x1080_halfmarathon-sportshow2019-1024x1024.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/03/sportxcamp2019_-1024x683.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2019/03/sportxcamp2019_-1024x683.jpg",
+      "publicUrl": "/images/wp-content/uploads/2019/03/sportxcamp2019_-1024x683.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/05/12ogoldencup_aponomes-1-1024x683.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2019/05/12ogoldencup_aponomes-1-1024x683.jpg",
+      "publicUrl": "/images/wp-content/uploads/2019/05/12ogoldencup_aponomes-1-1024x683.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/05/12ogoldencup_aponomes-1.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2019/05/12ogoldencup_aponomes-1.jpg",
+      "publicUrl": "/images/wp-content/uploads/2019/05/12ogoldencup_aponomes-1.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/05/12ogoldencup_ladies-1024x732.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2019/05/12ogoldencup_ladies-1024x732.jpg",
+      "publicUrl": "/images/wp-content/uploads/2019/05/12ogoldencup_ladies-1024x732.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/05/13o_GOLDEN_CUP_SUMMER_19-new_-738x1024.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2019/05/13o_GOLDEN_CUP_SUMMER_19-new_-738x1024.jpg",
+      "publicUrl": "/images/wp-content/uploads/2019/05/13o_GOLDEN_CUP_SUMMER_19-new_-738x1024.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/business-handshake.png",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/business-handshake.png",
+      "publicUrl": "/images/wp-content/uploads/2024/10/business-handshake.png",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/donation_oaspe_banner.png",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/donation_oaspe_banner.png",
+      "publicUrl": "/images/wp-content/uploads/2024/10/donation_oaspe_banner.png",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/dwrees_oaspe_header-scaled.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/dwrees_oaspe_header-scaled.jpg",
+      "publicUrl": "/images/wp-content/uploads/2024/10/dwrees_oaspe_header-scaled.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/football-about.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/football-about.jpg",
+      "publicUrl": "/images/wp-content/uploads/2024/10/football-about.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/oaspe-logo-nobg.png",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/oaspe-logo-nobg.png",
+      "publicUrl": "/images/wp-content/uploads/2024/10/oaspe-logo-nobg.png",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/oaspe_LAMP_BANNER_11zon-scaled.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/oaspe_LAMP_BANNER_11zon-scaled.jpg",
+      "publicUrl": "/images/wp-content/uploads/2024/10/oaspe_LAMP_BANNER_11zon-scaled.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/oaspe_QUOTE_BANNER_2-scaled.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/oaspe_QUOTE_BANNER_2-scaled.jpg",
+      "publicUrl": "/images/wp-content/uploads/2024/10/oaspe_QUOTE_BANNER_2-scaled.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/sabaweb_solutions_portfolio_soccerxcamp_5.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/sabaweb_solutions_portfolio_soccerxcamp_5.jpg",
+      "publicUrl": "/images/wp-content/uploads/2024/10/sabaweb_solutions_portfolio_soccerxcamp_5.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/special_portfolio_oaspe_7_11zon.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/special_portfolio_oaspe_7_11zon.jpg",
+      "publicUrl": "/images/wp-content/uploads/2024/10/special_portfolio_oaspe_7_11zon.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/toumbafc_logo.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/toumbafc_logo.jpg",
+      "publicUrl": "/images/wp-content/uploads/2024/10/toumbafc_logo.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/10/we_like_you_too_oaspe.jpg",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/10/we_like_you_too_oaspe.jpg",
+      "publicUrl": "/images/wp-content/uploads/2024/10/we_like_you_too_oaspe.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2024/12/oaspe_header_main_page_14.png",
+      "resolvedSource": "https://oaspe.org/wp-content/uploads/2024/12/oaspe_header_main_page_14.png",
+      "publicUrl": "/images/wp-content/uploads/2024/12/oaspe_header_main_page_14.png",
+      "status": "skipped"
+    }
+  ]
+}

@@ -12,6 +12,9 @@
 
 # testing
 /coverage
+/.artifacts/
+/test-results/
+/playwright-report/
 
 # next.js
 /.next/
@@ -39,3 +42,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local/generated deployment files
+/.next-playwright/
+*.zip
+
+# keep environment template
+!.env.example

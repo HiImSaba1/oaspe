@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-09-23T10:25:10.945Z",
+  "policy": "reviewed-article-media-only",
+  "total": 6,
+  "downloaded": 1,
+  "skipped": 5,
+  "failed": 0,
+  "items": [
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/05/13o_GOLDEN_CUP_SUMMER_19-new_-738x1024.jpg",
+      "localUrl": "/wp-images/articles/2019/05/13o_GOLDEN_CUP_SUMMER_19-new_-738x1024.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/05/12ogoldencup_aponomes-1-1024x683.jpg",
+      "localUrl": "/wp-images/articles/2019/05/12ogoldencup_aponomes-1-1024x683.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/05/12ogoldencup_ladies-1024x732.jpg",
+      "localUrl": "/wp-images/articles/2019/05/12ogoldencup_ladies-1024x732.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/03/sportxcamp2019_-1024x683.jpg",
+      "localUrl": "/wp-images/articles/2019/03/sportxcamp2019_-1024x683.jpg",
+      "status": "skipped"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/01/12o_PASXA_AFISA_2019_NEW.jpg",
+      "localUrl": "/wp-images/articles/2019/01/12o_PASXA_AFISA_2019_NEW.jpg",
+      "status": "downloaded"
+    },
+    {
+      "source": "https://oaspe.org/wp-content/uploads/2019/02/fb_1080x1080_halfmarathon-sportshow2019-1024x1024.jpg",
+      "localUrl": "/wp-images/articles/2019/02/fb_1080x1080_halfmarathon-sportshow2019-1024x1024.jpg",
+      "status": "skipped"
+    }
+  ]
+}

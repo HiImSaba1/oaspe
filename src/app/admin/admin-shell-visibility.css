@@ -1,0 +1,4 @@
+body:has(.admin-login) .site-header,
+body:has(.admin-shell) .site-header {
+  display: none;
+}
