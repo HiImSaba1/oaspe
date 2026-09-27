@@ -1,0 +1,131 @@
+﻿name: Build Papaki Standalone
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js standalone
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: npm run build
+
+      - name: Verify standalone output
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "=== BUILD INFO ==="
+          node --version
+          npm --version
+          node -p '"Next " + require("./node_modules/next/package.json").version'
+
+          echo
+          echo "=== STANDALONE CHECK ==="
+
+          test -d .next/standalone
+          test -f .next/standalone/server.js
+          test -f .next/BUILD_ID
+
+          echo "Standalone directory: OK"
+          echo "server.js: OK"
+
+          printf "BUILD_ID: "
+          cat .next/BUILD_ID
+          echo
+
+          echo
+          echo "=== STANDALONE SIZE BEFORE ASSETS ==="
+          du -sh .next/standalone
+
+      - name: Add static and public assets
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p .next/standalone/.next
+
+          cp -a .next/static .next/standalone/.next/static
+
+          if [ -d public ]; then
+            cp -a public .next/standalone/public
+          fi
+
+          echo "=== FINAL STANDALONE SIZE ==="
+          du -sh .next/standalone
+
+          echo
+          echo "=== CRITICAL FILES ==="
+
+          for path in \
+            ".next/standalone/server.js" \
+            ".next/standalone/package.json" \
+            ".next/standalone/.next/server" \
+            ".next/standalone/.next/static" \
+            ".next/standalone/public" \
+            ".next/standalone/node_modules"
+          do
+            if [ -e "$path" ]; then
+              echo "FOUND: $path"
+            else
+              echo "MISSING: $path"
+              exit 1
+            fi
+          done
+
+      - name: Inspect native modules
+        shell: bash
+        run: |
+          echo "=== NATIVE MODULES ==="
+          find .next/standalone -type f -name '*.node' -print | sort || true
+
+      - name: Create deployment archive
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BUILD_ID="$(cat .next/BUILD_ID)"
+          ARTIFACT="oaspe-papaki-standalone-${GITHUB_RUN_NUMBER}.tar.gz"
+
+          tar -C .next/standalone -czf "$ARTIFACT" .
+
+          sha256sum "$ARTIFACT" > "${ARTIFACT}.sha256"
+
+          echo "=== ARCHIVE ==="
+          ls -lh "$ARTIFACT" "${ARTIFACT}.sha256"
+
+          echo
+          echo "=== ARCHIVE VERIFICATION ==="
+          tar -tzf "$ARTIFACT" >/dev/null
+          echo "Archive verification: OK"
+
+          echo
+          echo "BUILD_ID=$BUILD_ID"
+
+          echo "artifact_name=$ARTIFACT" >> "$GITHUB_ENV"
+
+      - name: Upload standalone artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oaspe-papaki-standalone
+          path: |
+            ${{ env.artifact_name }}
+            ${{ env.artifact_name }}.sha256
+          if-no-files-found: error
+          retention-days: 7
