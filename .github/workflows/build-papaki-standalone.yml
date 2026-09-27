@@ -26,7 +26,7 @@ jobs:
           NEXT_TELEMETRY_DISABLED: "1"
         run: npm run build
 
-      - name: Diagnose Next.js build output
+      - name: Verify standalone output
         shell: bash
         run: |
           set -euo pipefail
@@ -37,50 +37,131 @@ jobs:
           node -p '"Next " + require("./node_modules/next/package.json").version'
 
           echo
-          echo "=== WORKING DIRECTORY ==="
-          pwd
+          echo "=== STANDALONE ==="
 
-          echo
-          echo "=== NEXT CONFIG ==="
-          cat next.config.ts || true
-
-          echo
-          echo "=== .NEXT DIRECTORY ==="
-          if [ -d .next ]; then
-            du -sh .next
-            find .next -maxdepth 3 -type d | sort
-          else
-            echo "ERROR: .next does not exist"
+          if [ ! -d .next/standalone ]; then
+            echo "ERROR: .next/standalone was not generated"
+            exit 1
           fi
+
+          echo "STANDALONE_FOUND=YES"
+          du -sh .next/standalone
+
+          if [ ! -f .next/standalone/server.js ]; then
+            echo "ERROR: .next/standalone/server.js is missing"
+            exit 1
+          fi
+
+          echo "SERVER_JS_FOUND=YES"
 
           echo
           echo "=== BUILD ID ==="
-          if [ -f .next/BUILD_ID ]; then
-            cat .next/BUILD_ID
-            echo
-          else
-            echo "MISSING: .next/BUILD_ID"
+          cat .next/BUILD_ID
+
+      - name: Prepare deployment directory
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "=== COPYING STATIC ASSETS ==="
+
+          mkdir -p .next/standalone/.next/static
+          cp -a .next/static/. .next/standalone/.next/static/
+
+          if [ -d public ]; then
+            rm -rf .next/standalone/public
+            cp -a public .next/standalone/public
           fi
 
           echo
-          echo "=== SEARCH FOR STANDALONE ==="
-          find . -type d -name standalone -print 2>/dev/null || true
+          echo "=== DEPLOYMENT SIZE ==="
+          du -sh .next/standalone
 
           echo
-          echo "=== SEARCH FOR GENERATED SERVER.JS ==="
-          find . \
-            -path './node_modules' -prune -o \
-            -path './.git' -prune -o \
-            -name server.js -print
+          echo "=== REQUIRED FILES ==="
 
-          echo
-          echo "=== REQUIRED SERVER FILES ==="
-          if [ -f .next/required-server-files.json ]; then
-            head -c 5000 .next/required-server-files.json
-            echo
+          test -f .next/standalone/server.js
+          echo "server.js: OK"
+
+          test -f .next/standalone/package.json
+          echo "package.json: OK"
+
+          test -d .next/standalone/.next
+          echo ".next: OK"
+
+          test -d .next/standalone/.next/static
+          echo ".next/static: OK"
+
+          if [ -d .next/standalone/public ]; then
+            echo "public: OK"
           else
-            echo "MISSING: .next/required-server-files.json"
+            echo "public: MISSING"
+            exit 1
           fi
 
+      - name: Inspect native modules
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "=== NATIVE .NODE MODULES ==="
+
+          find .next/standalone \
+            -type f \
+            -name '*.node' \
+            -print | sort || true
+
           echo
-          echo "=== DIAGNOSTIC COMPLETE ==="
+          echo "=== SWC NATIVE MODULES ==="
+
+          SWC_MODULES="$(find .next/standalone -type f -name '*swc*.node' -print || true)"
+
+          if [ -n "$SWC_MODULES" ]; then
+            echo "$SWC_MODULES"
+            echo
+            echo "WARNING: SWC native modules are present."
+          else
+            echo "No SWC native .node modules found."
+          fi
+
+      - name: Create deployment archive
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          COMMIT="${GITHUB_SHA::7}"
+          ARCHIVE="oaspe-papaki-standalone-${COMMIT}.tar.gz"
+
+          echo "Creating: $ARCHIVE"
+
+          tar \
+            -C .next/standalone \
+            -czf "$ARCHIVE" \
+            .
+
+          sha256sum "$ARCHIVE" > "${ARCHIVE}.sha256"
+
+          echo
+          echo "=== ARCHIVE ==="
+          ls -lh "$ARCHIVE" "${ARCHIVE}.sha256"
+
+          echo
+          echo "=== SHA256 ==="
+          cat "${ARCHIVE}.sha256"
+
+          echo
+          echo "=== VERIFY TAR ==="
+          tar -tzf "$ARCHIVE" >/dev/null
+          echo "Archive verification: OK"
+
+          echo "ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
+
+      - name: Upload Papaki artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oaspe-papaki-standalone-${{ github.sha }}
+          path: |
+            ${{ env.ARCHIVE }}
+            ${{ env.ARCHIVE }}.sha256
+          if-no-files-found: error
+          retention-days: 7
